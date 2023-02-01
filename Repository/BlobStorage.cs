@@ -7,7 +7,7 @@ namespace StorageAccount.Repository
 {
     public class BlobStorage
     {
-        static string connectionString="DefaultEndpointsProtocol=https;AccountName=mystorage881;AccountKey=WhaXU66YAaD7/DFmCDpSuMhJ3Yq2QxjFFzICdTm9FcHcdK05gLlOgH/9DzL7u9Lg41KbXHE12nwo+AStVIYs7Q==;EndpointSuffix=core.windows.net";
+        static string connectionString="";
         public static async Task CreateBlob(string blobName)
         {
             if(string.IsNullOrEmpty(blobName))
@@ -119,7 +119,7 @@ namespace StorageAccount.Repository
         {
             try
             {
-                string path=@"C:\AzureStorageAccount\StorageAccount\Download"+blobName;
+                string path=@"C:\AzureStorageAccount\StorageAccount\Download\"+blobName;
                 BlobContainerClient container=new BlobContainerClient(connectionString,blobName);
                 BlobClient client=container.GetBlobClient(file);
                 await client.DownloadToAsync(path);
