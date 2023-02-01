@@ -5,7 +5,7 @@ namespace StorageAccount.Repository
 {
     public class TableStorage
     {
-        static string connectionString="";
+        static string connectionString="DefaultEndpointsProtocol=https;AccountName=mystorageaccount881;AccountKey=wCsfrQ68ITVsNgh7cGsLAz485SNeBWawjZWejfXPziQt6LACmvNWm6wXdf/eLrkHuWKKnWpadROj+AStcfQQnQ==;EndpointSuffix=core.windows.net";
         public static async Task AddTable(string tableName)
         {
             var data=new TableServiceClient(connectionString);
